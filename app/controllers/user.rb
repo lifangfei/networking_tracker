@@ -1,3 +1,7 @@
+get '/session-viewer' do
+  session.inspect
+end
+
 get '/' do
   "Hello World"
 end
