@@ -18,6 +18,9 @@
   <title></title>
 </head>
 <body>
+<% if session[:user_id] %>
+  <a href="/logout">Logout</a>
+<% end %>
   <% if @errors %>
     <ul>
       <% @errors.each do |error| %>

@@ -23,7 +23,9 @@ end
 
 #create
 post '/users' do
-  @user = User.create(params[:user])
+  @user = User.new(params[:user])
+  @user.password = params[:password_hash]
+  @user.save!
   if @user.valid?
     redirect '/users'
   else
@@ -36,12 +38,14 @@ end
 # NUMBER ACTIONS, act on a particular member
 #show
 get '/users/:id' do
+  redirect '/login' unless session[:user_id] == params[:id].to_i
   @user = User.find(params[:id])
   erb :'users/show'
 end
 
 #edit
 get '/users/:id/edit' do
+  redirect '/login' unless session[:user_id] == params[:id].to_i
   @user = User.find(params[:id])
   erb :'users/edit'
 end
