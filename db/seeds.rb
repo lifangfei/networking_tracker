@@ -7,6 +7,7 @@ require 'faker'
   person[:username] = "#{person[:first_name]}#{person[:last_name]}".downcase
 
   contact = User.new(person)
+  contact.password = contact.password_hash
   contact.save!
 end
 

@@ -2,7 +2,7 @@ class CreateInteractions < ActiveRecord::Migration
   def change
     create_table :interactions do |t|
       t.date     :date
-      t.string   :method
+      t.string   :method_of_contact
       t.string   :location
       t.text     :professional_discussion
       t.text     :casual_discussion

@@ -1,0 +1,30 @@
+<div>
+  <div>
+    <label for="interactions_date">Date</label>
+    <input id="interactions_date" name="interactions[date]" type="text" value="<%=@interactions.date %>"/>
+  </div>
+  <div>
+    <label for="interactions_method">Method of Contact</label>
+    <input id="interactions_method" name="interactions[method_of_contact]" type="text" value="<%=@interactions.method_of_contact%>"/>
+  </div>
+  <div>
+    <label for="interactions_location">Location</label>
+    <input id="interactions_location" name="interactions[location]" type="text" value="<%=@interactions.location %>"/>
+  </div>
+  <div>
+    <label for="list_professional_discussion">Professional Discussion Topics</label>
+    <textarea name="list[professional_discussion]" cols="60" rows="10"></textarea>
+  </div>
+  <div>
+    <label for="list_casual_discussion">Casual Discussion Topics</label>
+    <textarea name="list[casual_discussion]" cols="60" rows="10"></textarea>
+  </div>
+  <div>
+    <label for="list_notes">Notes</label>
+    <textarea name="list[notes]" cols="60" rows="10"></textarea>
+  </div>
+  <div>
+    <label for="interactions_follow_up">Follow Up Date</label>
+    <input id="interactions_follow_up" name="interactions[follow_up]" type="text" value="<%=@interactions.follow_up %>"/>
+  </div>
+</div>

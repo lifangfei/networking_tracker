@@ -3,16 +3,7 @@ get '/session-viewer' do
 end
 
 get '/' do
-  "Hello World"
-end
-
-# COLLECTION ACTIONS, act on the entire collection
-#index
-get '/users' do
-  @users = User.all
-  @users.map{|user| user.email.to_s}
-  # Has to do with the pathway from views
-  erb :'users/index'
+  erb :'index'
 end
 
 #new
@@ -35,7 +26,6 @@ post '/users' do
   end
 end
 
-# NUMBER ACTIONS, act on a particular member
 #show
 get '/users/:id' do
   redirect '/login' unless session[:user_id] == params[:id].to_i
@@ -51,7 +41,6 @@ get '/users/:id/edit' do
 end
 
 #update
-# Most browsers only support GET and POST so we use a workaround in the erb
 def update_user
   @user = User.find(params[:id])
   @user.update(params[:user])
@@ -77,3 +66,4 @@ delete '/users/:id' do
   User.find(params[:id]).destroy!
   redirect '/users'
 end
+

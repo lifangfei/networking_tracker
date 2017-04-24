@@ -1,0 +1,24 @@
+<style>
+form { display: inline; }
+form input {
+  background:none!important;
+  border:none;
+  padding:0!important;
+  font: inherit;
+  color: -webkit-link;
+  text-decoration: underline;
+  cursor: auto;
+}
+</style>
+
+<h1>All Users</h1>
+<div class="users">
+  <ul>
+    <% @users.each do |user| %>
+      <li><%= "#{user.id} - #{user.email}"%> - <a href="/users/<%= user.id %>">Show</a>
+      <a href="/users/<%= user.id %>/edit">Edit</a>
+      <%= erb :"users/_delete", layout: false, locals: {user: user} %>
+      </li>
+    <% end %>
+  </ul>
+</div>
