@@ -24,14 +24,14 @@ end
 
 #show
 get '/lists/:id' do
-  redirect '/login' unless session[:list_id] == params[:id].to_i
+  # redirect '/login' unless session[:list_id] == params[:id].to_i
   @list = List.find(params[:id])
   erb :'lists/show'
 end
 
 #edit
 get '/lists/:id/edit' do
-  redirect '/login' unless session[:list_id] == params[:id].to_i
+  # redirect '/login' unless session[:list_id] == params[:id].to_i
   @list = List.find(params[:id])
   erb :'lists/edit'
 end

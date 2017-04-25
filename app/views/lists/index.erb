@@ -11,13 +11,13 @@ form input {
 }
 </style>
 
-<h1>All Users</h1>
-<div class="users">
+<h1>All Lists</h1>
+<div class="lists">
   <ul>
-    <% @users.each do |user| %>
-      <li><%= "#{user.id} - #{user.email}"%> - <a href="/users/<%= user.id %>">Show</a>
-      <a href="/users/<%= user.id %>/edit">Edit</a>
-      <%= erb :"users/_delete", layout: false, locals: {user: user} %>
+    <% @lists.each do |list| %>
+      <li><%= "#{list.id} - #{list.email}"%> - <a href="/lists/<%= list.id %>">Show</a>
+      <a href="/lists/<%= list.id %>/edit">Edit</a>
+      <%= erb :"lists/_delete", layout: false, locals: {list: list} %>
       </li>
     <% end %>
   </ul>

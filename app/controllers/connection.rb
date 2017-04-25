@@ -25,14 +25,14 @@ end
 
 #show
 get '/connections/:id' do
-  redirect '/login' unless session[:connection_id] == params[:id].to_i
+  # redirect '/login' unless session[:connection_id] == params[:id].to_i
   @connection = Connection.find(params[:id])
   erb :'connections/show'
 end
 
 #edit
 get '/connections/:id/edit' do
-  redirect '/login' unless session[:connection_id] == params[:id].to_i
+  # redirect '/login' unless session[:connection_id] == params[:id].to_i
   @connection = Connection.find(params[:id])
   erb :'connections/edit'
 end

@@ -27,14 +27,14 @@ end
 
 #show
 get '/interactions/:id' do
-  redirect '/login' unless session[:interaction_id] == params[:id].to_i
+  # redirect '/login' unless session[:interaction_id] == params[:id].to_i
   @interaction = Interaction.find(params[:id])
   erb :'interactions/show'
 end
 
 #edit
 get '/interactions/:id/edit' do
-  redirect '/login' unless session[:interaction_id] == params[:id].to_i
+  # redirect '/login' unless session[:interaction_id] == params[:id].to_i
   @interaction = Interaction.find(params[:id])
   erb :'interactions/edit'
 end

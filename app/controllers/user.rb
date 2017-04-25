@@ -28,14 +28,14 @@ end
 
 #show
 get '/users/:id' do
-  redirect '/login' unless session[:user_id] == params[:id].to_i
+  # redirect '/login' unless session[:user_id] == params[:id].to_i
   @user = User.find(params[:id])
   erb :'users/show'
 end
 
 #edit
 get '/users/:id/edit' do
-  redirect '/login' unless session[:user_id] == params[:id].to_i
+  # redirect '/login' unless session[:user_id] == params[:id].to_i
   @user = User.find(params[:id])
   erb :'users/edit'
 end
