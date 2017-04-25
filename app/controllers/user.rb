@@ -15,10 +15,11 @@ end
 #create
 post '/users' do
   @user = User.new(params[:user])
-  @user.password = params[:password_hash]
+  @user.password = params[:user][:password_hash]
+  @user.password_hash = @user.password
   @user.save!
   if @user.valid?
-    redirect '/users'
+    redirect "/login"
   else
     status 422
     @errors = @user.errors.full_messages
