@@ -1,8 +1,8 @@
-#show all interactions
-route = "interactions"
 # get '/interactions' do
-get "/#{route}" do
-  erb :"#{route}/index"
+get "/interactions" do
+  user = User.find(session[:user_id])
+  @interactions = user.interactions
+  erb :"interactions/index"
 end
 
 #new

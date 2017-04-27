@@ -14,5 +14,10 @@
     <li>Linkedin: <%= @connection.linkedin %></li>
     <li>Notes: <%= @connection.notes %></li>
     <li>Tier: <%= @connection.tier %></li>
+    <li>Interactions: <% @connection.interactions.each do |interaction|%>
+      <li><a href="/interactions/<%= interaction.id %>"><%= interaction.date %></a></li>
+      <% end  %>
+    </li>
+
   </ul>
 </div>

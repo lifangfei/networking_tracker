@@ -15,7 +15,7 @@ form input {
 <div class="lists">
   <ul>
     <% @lists.each do |list| %>
-      <li><%= "#{list.id} - #{list.email}"%> - <a href="/lists/<%= list.id %>">Show</a>
+      <li><%= "#{list.id} - #{list.name}"%> - <a href="/lists/<%= list.id %>">Show</a>
       <a href="/lists/<%= list.id %>/edit">Edit</a>
       <%= erb :"lists/_delete", layout: false, locals: {list: list} %>
       </li>

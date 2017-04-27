@@ -15,7 +15,7 @@ form input {
 <div class="connections">
   <ul>
     <% @connections.each do |connection| %>
-      <li><%= "#{connection.id} - #{connection.email}"%> - <a href="/connections/<%= connection.id %>">Show</a>
+      <li><%= "#{connection.id} - #{connection.first_name} - #{connection.last_name}"%> - <a href="/connections/<%= connection.id %>">Show</a>
       <a href="/connections/<%= connection.id %>/edit">Edit</a>
       <%= erb :"connections/_delete", layout: false, locals: {connection: connection} %>
       </li>

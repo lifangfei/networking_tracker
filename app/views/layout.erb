@@ -19,6 +19,7 @@
   <% end %>
   <% if session[:user_id] %>
     <li><a href="/users/<%=session[:user_id]%>">My Account</a></li>
+    <li><a href="/lists">Lists</a></li>
     <li><a href="/logout">Logout</a></li>
   <% end %>
 </ul>

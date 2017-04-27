@@ -15,7 +15,7 @@ form input {
 <div class="interactions">
   <ul>
     <% @interactions.each do |interaction| %>
-      <li><%= "#{interaction.id} - #{interaction.email}"%> - <a href="/interactions/<%= interaction.id %>">Show</a>
+      <li><%= "#{interaction.id} - #{interaction.date}"%> - <a href="/interactions/<%= interaction.id %>">Show</a>
       <a href="/interactions/<%= interaction.id %>/edit">Edit</a>
       <%= erb :"interactions/_delete", layout: false, locals: {interaction: interaction} %>
       </li>

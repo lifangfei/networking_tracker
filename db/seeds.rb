@@ -1,6 +1,11 @@
 require 'faker'
 
-5.times do
+harini_info = { first_name: "Harini", last_name: "Balakrishnan", email: "harini1593@gmail.com", password_hash: "xxx", username: "hariniGB"}
+harini = User.new(harini_info)
+harini.password = harini.password_hash
+harini.save!
+
+4.times do
   person = { first_name: Faker::Name.first_name, last_name: Faker::Name.last_name }
   person[:email] = Faker::Internet.safe_email("#{person[:first_name]}.#{person[:last_name]}")
   person[:password_hash] = "xxx"

@@ -1,5 +1,7 @@
 #show all lists
 get '/lists' do
+  user = User.find(session[:user_id])
+  @lists = user.lists
   erb :'lists/index'
 end
 
@@ -12,6 +14,7 @@ end
 post '/lists' do
   @list = List.new(params[:list])
   @list.password = params[:password_hash]
+  @list.user_id = session[:user_id]
   @list.save!
   if @list.valid?
     redirect '/lists'
@@ -24,15 +27,17 @@ end
 
 #show
 get '/lists/:id' do
-  # redirect '/login' unless session[:list_id] == params[:id].to_i
+  user = User.find(session[:user_id])
   @list = List.find(params[:id])
+  redirect '/lists' unless user.lists.include? @list
   erb :'lists/show'
 end
 
 #edit
 get '/lists/:id/edit' do
-  # redirect '/login' unless session[:list_id] == params[:id].to_i
+  user = User.find(session[:user_id])
   @list = List.find(params[:id])
+  redirect '/lists' unless user.lists.include? @list
   erb :'lists/edit'
 end
 
@@ -58,6 +63,9 @@ end
 
 #delete
 delete '/lists/:id' do
-  List.find(params[:id]).destroy!
+  user = User.find(session[:user_id])
+  @list = List.find(params[:id])
+  redirect '/lists' unless user.lists.include? @list
+  @list.destroy!
   redirect '/lists'
 end

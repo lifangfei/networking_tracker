@@ -1,5 +1,13 @@
 #show all connection
 get '/connections' do
+  user = User.find(session[:user_id])
+  lists = user.lists
+  @connections = []
+  lists.each do |list|
+    @connections << list.connections
+  end
+  @connections.flatten
+  @connections
   erb :'connections/index'
 end
 
@@ -25,8 +33,9 @@ end
 
 #show
 get '/connections/:id' do
-  # redirect '/login' unless session[:connection_id] == params[:id].to_i
+  user = User.find(session[:user_id])
   @connection = Connection.find(params[:id])
+  redirect '/connections' unless user.lists.connection.include? @connection
   erb :'connections/show'
 end
 
@@ -42,7 +51,7 @@ def update_connection
   @connection = Connection.find(params[:id])
   @connection.update(params[:connection])
   if @connection.valid?
-    redirect "/connection/#{@connection.id}"
+    redirect "/connections/#{@connection.id}"
   else
     status 422
     @errors = @connection.errors.full_messages

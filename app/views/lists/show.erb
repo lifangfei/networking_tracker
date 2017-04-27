@@ -3,6 +3,11 @@
   <ul>
     <li>Name: <%= @list.name %></li>
     <li>Tier: <%= @list.tier %></li>
-    <li>Notes <%= @list.notes %></li>
+    <li>Notes: <%= @list.notes %></li><br>
+    <li>Connections: <% @list.connections.each do |connection|%>
+      <li><a href="/connections/<%= connection.id %>"><%= connection.full_name %></a></li>
+      <% end  %>
+    </li>
   </ul>
 </div>
+
