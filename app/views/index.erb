@@ -22,33 +22,39 @@
 
       <section class="module content">
         <div class="container">
+        <% if !logged_in? %>
+          <div id="homepage-signup">
           <h2>Sign Up</h2>
           <form action="/users" method="post">
             <p><div class="form"><div>
-              <label for="user_first_name">First Name</label>
-                <input id="user_first_name" name="user[first_name]" type="text" value="<%=@user.first_name %>"/>
-              </div>
-              <div>
-                <label for="user_last_name">Last Name</label>
-                <input id="user_last_name" name="user[last_name]" type="text" value="<%=@user.last_name %>"/>
-              </div>
-              <div>
-                <label for="user_email">Email</label>
-                <input id="user_email" name="user[email]" type="text" value="<%=@user.email %>"/>
-              </div>
-              <div>
-                <label for="user_username">Username</label>
-                <input id="user_username" name="user[username]" type="text" value="<%=@user.username %>"/>
-              </div>
-              <div>
-                <label for="user_password_hash">Password</label>
-                <input id="user_password_hash" name="user[password_hash]" type="password"/>
-              </div>
+              <%= erb :'users/_form_fields', layout: false %>
               <div>
                 <input name="commit" type="submit" value="Create User"/>
               </div>
+              <div id="login-swap">
+                Already a user? Login
+              </div>
           </div></p>
-          <form>
+          </form>
+          </div>
+          <div id="homepage-login">
+            <h2> Login </h2>
+            <form action="/sessions" method="post">
+              <p><div class="form">
+               <%= erb :'sessions/_form_fields', layout: false %>
+              <div id="signup-swap">
+                Not a user? Signup
+              </div>
+              </div>
+            </p></form>
+          </div>
+        <% else %>
+        <h2>Getting Started</h2>
+          <p>1. Think about your networking goals and create groups of people you need to reach out to. Separate them out by industry, business function, relationships, etc. Whatever you think best suits your needs.</p>
+          <p>2. Record people that you reach out to in each list to the best of your ability. These people will make up your 'connections' list</p>
+          <p>3. Every time you have a conversation over email, phone, coffee, etc. jot down that information as an 'interaction'</p>
+          <p>4. Don't let your networks die. Set dates for follow-up interactions to reach out to your existing network</p>
+        <% end  %>
         </div>
       </section>
 
@@ -60,11 +66,13 @@
 
       <section class="module content">
         <div class="container">
-          <h2>Lorem Ipsum Dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veritatis, facere aliquid itaque tempore consequatur nihil sint enim aliquam id saepe magnam totam repellat placeat a fugit nulla molestias voluptas.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum distinctio eum asperiores rem enim fugit eaque voluptas est laboriosam in repudiandae architecto placeat, illum atque quasi explicabo, culpa, molestias!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptas, aperiam quae provident, recusandae rem quis. Ut quaerat, quasi iste voluptate et dolorem atque sed neque voluptates, molestias dolor enim!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam odit tempore, quibusdam impedit deserunt. Natus quisquam, facilis numquam, molestias nesciunt modi, at debitis maxime sunt et quo quas labore perferendis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde delectus laborum doloremque recusandae, debitis maxime a! Nihil distinctio ex, cumque tempore ea voluptas omnis odit, quaerat natus nam excepturi corporis!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eius harum atque unde nihil aut quam provident sunt, iste error vitae suscipit dolores cupiditate totam, eum quae alias! Dicta, nisi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate beatae impedit officia quis odit rerum sequi, explicabo commodi illum suscipit, tempore eum doloremque quae obcaecati tempora quidem neque sapiente modi?</p>
+          <h2>Words of Wisdom</h2>
+          <p>"Networking is an essential part of building wealth" - Armstrong Williams</p>
+          <p>Networking is all about connecting with people. But then again, isn't that what life is about? The more time you can find to get out of the office and build true friendships, the farther your startup will go" - Jay Samit</p>
+          <p>"To be successful, you have to be able to relate to people; they have to be satisfied with your personality to be able to do business with you and to build a relationship with mutual trust" - George Ross</p>
+          <p>"Pulling a good network together takes effort, sincerity and time" - Alan Collins</p>
+          <p>"You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you" - Dale Carnegie</p>
+          <p>"The currency of real networking is not greed but generosity" - Keith Ferrazzi</p>
         </div>
       </section>
 
@@ -76,11 +84,11 @@
 
       <section class="module content">
         <div class="container">
-          <h2>Lorem Ipsum Dolor</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil consequuntur, nesciunt dicta, esse rem ducimus itaque quis. Adipisci ullam nam qui illum debitis sit ad in delectus, repudiandae non dolorum! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit veritatis, facere aliquid itaque tempore consequatur nihil sint enim aliquam id saepe magnam totam repellat placeat a fugit nulla molestias voluptas.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta cum distinctio eum asperiores rem enim fugit eaque voluptas est laboriosam in repudiandae architecto placeat, illum atque quasi explicabo, culpa, molestias!Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit voluptas, aperiam quae provident, recusandae rem quis. Ut quaerat, quasi iste voluptate et dolorem atque sed neque voluptates, molestias dolor enim!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam odit tempore, quibusdam impedit deserunt. Natus quisquam, facilis numquam, molestias nesciunt modi, at debitis maxime sunt et quo quas labore perferendis.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde delectus laborum doloremque recusandae, debitis maxime a! Nihil distinctio ex, cumque tempore ea voluptas omnis odit, quaerat natus nam excepturi corporis!</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque eius harum atque unde nihil aut quam provident sunt, iste error vitae suscipit dolores cupiditate totam, eum quae alias! Dicta, nisi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate beatae impedit officia quis odit rerum sequi, explicabo commodi illum suscipit, tempore eum doloremque quae obcaecati tempora quidem neque sapiente modi?</p>
+          <h2>Getting Started</h2>
+          <p>1. Think about your networking goals and create groups of people you need to reach out to. Separate them out by industry, business function, relationships, etc. Whatever you think best suits your needs.</p>
+          <p>2. Record people that you reach out to in each list to the best of your ability. These people will make up your 'connections' list</p>
+          <p>3. Every time you have a conversation over email, phone, coffee, etc. jot down that information as an 'interaction'</p>
+          <p>4. Don't let your networks die. Set dates for follow-up interactions to reach out to your existing network</p>
         </div>
       </section>
 
