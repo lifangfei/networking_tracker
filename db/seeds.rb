@@ -17,7 +17,7 @@ harini.save!
 end
 
 20.times do
-  list_details = { name: Faker::Name.title, tier: (1+rand(3)), user_id: (1+rand(5))}
+  list_details = { name: Faker::Job.field, tier: (1+rand(3)), user_id: (1+rand(5))}
   list = List.new(list_details)
   list.save!
 end

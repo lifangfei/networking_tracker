@@ -22,3 +22,53 @@ ul.nav-bar li a {
 ul.nav-bar li a:hover {
     background-color: #111;
 }
+
+/* Form */
+input[type=text], input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: darkgray;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: black;
+}
+
+.form {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+/* Page Layout */
+
+.page-container {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#submit-button {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+li {
+    list-style-type: none;
+}

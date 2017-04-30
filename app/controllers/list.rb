@@ -1,7 +1,7 @@
 #show all lists
 get '/lists' do
   user = User.find(session[:user_id])
-  @lists = user.lists
+  @lists = user.lists.sort_by{|list| list.tier}
   erb :'lists/index'
 end
 

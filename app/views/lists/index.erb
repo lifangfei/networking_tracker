@@ -1,24 +1,30 @@
-<style>
-form { display: inline; }
-form input {
-  background:none!important;
-  border:none;
-  padding:0!important;
-  font: inherit;
-  color: -webkit-link;
-  text-decoration: underline;
-  cursor: auto;
-}
-</style>
+<div class="page-container">
 
-<h1>All Lists</h1>
-<div class="lists">
-  <ul>
-    <% @lists.each do |list| %>
-      <li><%= "#{list.id} - #{list.name}"%> - <a href="/lists/<%= list.id %>">Show</a>
-      <a href="/lists/<%= list.id %>/edit">Edit</a>
-      <%= erb :"lists/_delete", layout: false, locals: {list: list} %>
-      </li>
-    <% end %>
-  </ul>
+  <style>
+  form { display: inline; }
+  form input {
+    background:none!important;
+    border:none;
+    padding:0!important;
+    font: inherit;
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+  }
+  </style>
+
+  <h1>All Lists</h1>
+  <div class="lists">
+    <ul>
+      <% @lists.each do |list| %>
+        <li><%= "#{list.name}"%> - <a href="/lists/<%= list.id %>">Show</a>
+        <a href="/lists/<%= list.id %>/edit">Edit</a>
+        <%= erb :"lists/_delete", layout: false, locals: {list: list} %> <br>
+        Tier: <%= list.tier %> <br>
+        Notes: <%= list.notes %>
+        </li><br>
+      <% end %>
+    </ul>
+  </div>
+
 </div>

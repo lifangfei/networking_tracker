@@ -1,23 +1,27 @@
-<h1>Connections</h1>
-<div class="connections-details">
-  <ul>
-    <li>First Name: <%= @connection.first_name %></li>
-    <li>Last Name: <%= @connection.last_name %></li>
-    <li>Company: <%= @connection.company %></li>
-    <li>Title <%= @connection.title %></li>
-    <li>Phone: <%= @connection.phone %></li>
-    <li>Mobile: <%= @connection.mobile %></li>
-    <li>Fax: <%= @connection.fax %></li>
-    <li>Email: <%= @connection.email %></li>
-    <li>Website: <%= @connection.website %></li>
-    <li>Industry: <%= @connection.industry %></li>
-    <li>Linkedin: <%= @connection.linkedin %></li>
-    <li>Notes: <%= @connection.notes %></li>
-    <li>Tier: <%= @connection.tier %></li>
-    <li>Interactions: <% @connection.interactions.each do |interaction|%>
-      <li><a href="/interactions/<%= interaction.id %>"><%= interaction.date %></a></li>
-      <% end  %>
-    </li>
+<div class="page-container">
 
-  </ul>
+  <h1>Connections</h1>
+  <div class="connections-details">
+    <ul>
+      <li>First Name: <%= @connection.first_name %></li>
+      <li>Last Name: <%= @connection.last_name %></li>
+      <li>Company: <%= @connection.company %></li>
+      <li>Title <%= @connection.title %></li>
+      <li>Phone: <%= @connection.phone %></li>
+      <li>Mobile: <%= @connection.mobile %></li>
+      <li>Fax: <%= @connection.fax %></li>
+      <li>Email: <%= @connection.email %></li>
+      <li>Website: <%= @connection.website %></li>
+      <li>Industry: <%= @connection.industry %></li>
+      <li>Linkedin: <%= @connection.linkedin %></li>
+      <li>Notes: <%= @connection.notes %></li>
+      <li>Tier: <%= @connection.tier %></li>
+      <li>Interactions: <% @connection.interactions.each do |interaction|%>
+        <li><a href="/interactions/<%= interaction.id %>"><%= interaction.date %></a></li>
+        <% end  %>
+      </li>
+
+    </ul>
+  </div>
+
 </div>

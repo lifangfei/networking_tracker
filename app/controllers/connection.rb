@@ -6,7 +6,6 @@ get '/connections' do
   lists.each do |list|
     @connections << list.connections
   end
-  @connections.flatten
   @connections
   erb :'connections/index'
 end
@@ -34,8 +33,14 @@ end
 #show
 get '/connections/:id' do
   user = User.find(session[:user_id])
+  lists = user.lists
+  @connections = []
+  lists.each do |list|
+    @connections << list.connections
+  end
+  @connections
   @connection = Connection.find(params[:id])
-  redirect '/connections' unless user.lists.connection.include? @connection
+  redirect '/connections' unless @connections.flatten.include? @connection
   erb :'connections/show'
 end
 

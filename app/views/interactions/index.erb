@@ -1,24 +1,28 @@
-<style>
-form { display: inline; }
-form input {
-  background:none!important;
-  border:none;
-  padding:0!important;
-  font: inherit;
-  color: -webkit-link;
-  text-decoration: underline;
-  cursor: auto;
-}
-</style>
+<div class="page-container">
 
-<h1>All Interactions</h1>
-<div class="interactions">
-  <ul>
-    <% @interactions.each do |interaction| %>
-      <li><%= "#{interaction.id} - #{interaction.date}"%> - <a href="/interactions/<%= interaction.id %>">Show</a>
-      <a href="/interactions/<%= interaction.id %>/edit">Edit</a>
-      <%= erb :"interactions/_delete", layout: false, locals: {interaction: interaction} %>
-      </li>
-    <% end %>
-  </ul>
+  <style>
+  form { display: inline; }
+  form input {
+    background:none!important;
+    border:none;
+    padding:0!important;
+    font: inherit;
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+  }
+  </style>
+
+  <h1>All Interactions</h1>
+  <div class="interactions">
+    <ul>
+      <% @interactions.each do |interaction| %>
+        <li><%= "#{interaction.id} - #{interaction.date}"%> - <a href="/interactions/<%= interaction.id %>">Show</a>
+        <a href="/interactions/<%= interaction.id %>/edit">Edit</a>
+        <%= erb :"interactions/_delete", layout: false, locals: {interaction: interaction} %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>

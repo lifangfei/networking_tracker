@@ -1,24 +1,28 @@
-<style>
-form { display: inline; }
-form input {
-  background:none!important;
-  border:none;
-  padding:0!important;
-  font: inherit;
-  color: -webkit-link;
-  text-decoration: underline;
-  cursor: auto;
-}
-</style>
+<div class="page-container">
 
-<h1>All Connections</h1>
-<div class="connections">
-  <ul>
-    <% @connections.each do |connection| %>
-      <li><%= "#{connection.id} - #{connection.first_name} - #{connection.last_name}"%> - <a href="/connections/<%= connection.id %>">Show</a>
-      <a href="/connections/<%= connection.id %>/edit">Edit</a>
-      <%= erb :"connections/_delete", layout: false, locals: {connection: connection} %>
-      </li>
-    <% end %>
-  </ul>
+  <style>
+  form { display: inline; }
+  form input {
+    background:none!important;
+    border:none;
+    padding:0!important;
+    font: inherit;
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+  }
+  </style>
+
+  <h1>All Connections</h1>
+  <div class="connections">
+    <ul>
+      <% @connections.flatten.each do |connection| %>
+        <li><%= "#{connection.list} - #{connection.first_name} - #{connection.last_name}"%> - <a href="/connections/<%= connection.id %>">Show</a>
+        <a href="/connections/<%= connection.id %>/edit">Edit</a>
+        <%= erb :"connections/_delete", layout: false, locals: {connection: connection} %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>

@@ -3,6 +3,7 @@ get '/session-viewer' do
 end
 
 get '/' do
+  @user = User.new
   erb :'index'
 end
 
@@ -19,7 +20,7 @@ post '/users' do
   @user.password_hash = @user.password
   @user.save!
   if @user.valid?
-    redirect "/login"
+    redirect "/sessions/new"
   else
     status 422
     @errors = @user.errors.full_messages
@@ -29,14 +30,14 @@ end
 
 #show
 get '/users/:id' do
-  # redirect '/login' unless session[:user_id] == params[:id].to_i
+  redirect '/sessions/new' unless session[:user_id] == params[:id].to_i
   @user = User.find(params[:id])
   erb :'users/show'
 end
 
 #edit
 get '/users/:id/edit' do
-  # redirect '/login' unless session[:user_id] == params[:id].to_i
+  redirect '/sessions/new' unless session[:user_id] == params[:id].to_i
   @user = User.find(params[:id])
   erb :'users/edit'
 end
