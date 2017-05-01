@@ -1,9 +1,6 @@
-<head>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
-</head>
 <div class="page-container">
 <style>
-form { display: inline; }
+/*form { display: inline; }
 form input {
   background:none!important;
   border:none;
@@ -12,16 +9,15 @@ form input {
   color: -webkit-link;
   text-decoration: underline;
   cursor: auto;
-}
+}*/
 </style>
-  <h1>User</h1>
+  <h1><%= @user.full_name %></h1>
   <div class="users-details">
     <ul>
-      <li>id: <%= @user.id %></li>
       <li>First Name: <%= @user.first_name %></li>
       <li>Last Name: <%= @user.last_name %></li>
       <li>Email: <%= @user.email %></li><br><br>
-      <li><a href="/users/<%= @user.id %>/edit">Edit</a></li>
+      <li id="button"><a href="/users/<%= @user.id %>/edit">Edit</a></li>
       <li> <%= erb :"users/_delete", layout: false, locals: {user: @user} %></li>
     </ul>
   </div>

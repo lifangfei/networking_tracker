@@ -1,5 +1,8 @@
 /*Navigation Bar*/
 ul.nav-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -37,7 +40,7 @@ input[type=text], input[type=password], select {
     box-sizing: border-box;
 }
 
-input[type=submit] {
+input[type=submit], #button {
     width: 100%;
     background-color: darkgray;
     color: white;
@@ -48,7 +51,7 @@ input[type=submit] {
     cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[type=submit]:hover, #button:hover {
     background-color: black;
 }
 
@@ -79,16 +82,15 @@ li {
     list-style-type: none;
 }
 
-#homepage-login {
-    display: none;
-}
-
-#login-swap:hover, #signup-swap:hover {
-    color: black;
-}
 
 h2, h1 {
-    font-size: 42px;
-    font-family: "Roboto Slab", serif;
+    padding: 5%;
+    font-size: 60px;
+    font-family: "Volkhov", serif;
     color: darkgray;
+}
+
+#button {
+    text-decoration: none;
+    color: white;
 }

@@ -1,0 +1,10 @@
+<h2>Sign Up</h2>
+  <form action="/users" method="post">
+    <p><div class="form">
+      <%= erb :'users/_form_fields'%>
+      <div>
+        <input name="commit" type="submit" value="Create User"/>
+      </div>
+      <a id="login-swap" href="/sessions/new"> Already a user? Login </a>
+    </div></p>
+  </form>

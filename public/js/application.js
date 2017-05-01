@@ -1,11 +1,26 @@
 $(document).ready(function() {
-  $('#login-swap').on('click', function(){
-    $('#homepage-signup').hide();
-    $('#homepage-login').show();
+  $('#homepage-signup').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $('#homepage-signup').empty();
+      $('#homepage-login').append(response);
+    })
   });
 
-  $('#signup-swap').on('click', function(){
-    $('#homepage-login').hide();
-    $('#homepage-signup').show();
+  $('#homepage-login').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $('#homepage-login').empty();
+      $('#homepage-signup').append(response);
+    })
   });
+
 });

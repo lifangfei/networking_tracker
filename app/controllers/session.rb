@@ -1,7 +1,11 @@
 include BCrypt
 
 get '/sessions/new' do
-  erb :"sessions/index"
+  if request.xhr?
+    erb :"sessions/_front_page_login", layout: false
+  else
+    erb :"sessions/index"
+  end
 end
 
 post '/sessions' do

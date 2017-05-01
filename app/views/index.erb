@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 <head>
   <title>Networking Tracker</title>
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto+Slab">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Volkhov">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/style.css">
 
@@ -24,36 +24,16 @@
         <div class="container">
         <% if !logged_in? %>
           <div id="homepage-signup">
-          <h2>Sign Up</h2>
-          <form action="/users" method="post">
-            <p><div class="form"><div>
-              <%= erb :'users/_form_fields', layout: false %>
-              <div>
-                <input name="commit" type="submit" value="Create User"/>
-              </div>
-              <div id="login-swap">
-                Already a user? Login
-              </div>
-          </div></p>
-          </form>
+            <%= erb :"/users/_front_page_signup" %>
           </div>
           <div id="homepage-login">
-            <h2> Login </h2>
-            <form action="/sessions" method="post">
-              <p><div class="form">
-               <%= erb :'sessions/_form_fields', layout: false %>
-              <div id="signup-swap">
-                Not a user? Signup
-              </div>
-              </div>
-            </p></form>
           </div>
         <% else %>
-        <h2>Getting Started</h2>
-          <p>1. Think about your networking goals and create groups of people you need to reach out to. Separate them out by industry, business function, relationships, etc. Whatever you think best suits your needs.</p>
-          <p>2. Record people that you reach out to in each list to the best of your ability. These people will make up your 'connections' list</p>
-          <p>3. Every time you have a conversation over email, phone, coffee, etc. jot down that information as an 'interaction'</p>
-          <p>4. Don't let your networks die. Set dates for follow-up interactions to reach out to your existing network</p>
+          <h2>Getting Started</h2>
+            <p>1. Think about your networking goals and create groups of people you need to reach out to. Separate them out by industry, business function, relationships, etc. Whatever you think best suits your needs.</p>
+            <p>2. Record people that you reach out to in each list to the best of your ability. These people will make up your 'connections' list</p>
+            <p>3. Every time you have a conversation over email, phone, coffee, etc. jot down that information as an 'interaction'</p>
+            <p>4. Don't let your networks die. Set dates for follow-up interactions to reach out to your existing network</p>
         <% end  %>
         </div>
       </section>
