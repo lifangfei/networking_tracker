@@ -10,7 +10,11 @@ end
 #new
 get '/users/new' do
   @user = User.new
-  erb :'users/new'
+  if request.xhr?
+    erb :'users/_front_page_signup', layout: false
+  else
+    erb :'users/new'
+  end
 end
 
 #create
