@@ -8,6 +8,7 @@ ul.nav-bar {
     padding: 0;
     overflow: hidden;
     background-color: #b4b4b4;
+    z-index: 3;
 }
 
 ul.nav-bar li {
@@ -84,13 +85,33 @@ li {
 
 
 h2, h1 {
-    padding: 5%;
     font-size: 60px;
     font-family: "Volkhov", serif;
     color: darkgray;
 }
 
+
 #button {
-    text-decoration: none;
+    display: inline-block;
     color: white;
+    width: 93%;
+    text-decoration: none;
+}
+
+.userProfile {
+    position:relative;
+}
+
+.coverPhoto {
+    top: 60px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+.userIcon {
+    position: relative;
+    top: 10px;
+    left: 30px;
+    z-index: 2;
+    width: 20%;
 }
