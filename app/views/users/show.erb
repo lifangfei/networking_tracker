@@ -1,4 +1,4 @@
-<div class="page-container">
+<img class="coverPhoto" src="/cityscape2.png">
 <style>
 /*form { display: inline; }
 form input {
@@ -11,13 +11,19 @@ form input {
   cursor: auto;
 }*/
 </style>
+
+<div class="page-container">
+
+  <div class="userProfile">
+    <img class="userIcon" src="/user_icon.png">
+  </div>
   <h1><%= @user.full_name %></h1>
   <div class="users-details">
     <ul>
       <li>First Name: <%= @user.first_name %></li>
       <li>Last Name: <%= @user.last_name %></li>
       <li>Email: <%= @user.email %></li><br><br>
-      <li id="button"><a href="/users/<%= @user.id %>/edit">Edit</a></li>
+      <li id="buttonId"><center><a id="button" href="/users/<%= @user.id %>/edit">Edit</a></li></center>
       <li> <%= erb :"users/_delete", layout: false, locals: {user: @user} %></li>
     </ul>
   </div>
