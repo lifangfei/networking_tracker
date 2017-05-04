@@ -23,6 +23,8 @@ require 'bcrypt'
 require 'faker'
 
 require 'twilio-ruby'
+require 'dotenv'
+Dotenv.load
 
 
 # Some helper constants for path-centric logic
