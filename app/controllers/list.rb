@@ -30,7 +30,11 @@ get '/lists/:id' do
   user = User.find(session[:user_id])
   @list = List.find(params[:id])
   redirect '/lists' unless user.lists.include? @list
-  erb :'lists/show'
+  if request.xhr?
+    erb :'lists/_index', layout: false, locals: {list: @list}
+  else
+    erb :'lists/show'
+  end
 end
 
 #edit

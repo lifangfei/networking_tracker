@@ -1,3 +1,4 @@
+<img class="coverPhoto" src="/cityscape2.png">
 
 <div class="page-container">
 
@@ -14,11 +15,14 @@
   }
   </style>
 
+  <br>
+  <br>
+
   <h1>All Connections</h1>
   <div class="connections">
     <ul>
       <% @connections.flatten.each do |connection| %>
-        <li><%= "#{connection.list} - #{connection.first_name} - #{connection.last_name}"%> - <a href="/connections/<%= connection.id %>">Show</a>
+        <li><%= "#{connection.list.name} - #{connection.full_name} "%> - <a href="/connections/<%= connection.id %>">Show</a>
         <a href="/connections/<%= connection.id %>/edit">Edit</a>
         <%= erb :"connections/_delete", layout: false, locals: {connection: connection} %>
         </li>
