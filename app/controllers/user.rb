@@ -4,6 +4,22 @@ end
 
 get '/' do
   @user = User.new
+  @client = Twilio::REST::Client.new ENV['account_sid'], ENV['auth_token']
+  if !!session[:user_id]
+    user = User.find(session[:user_id])
+    # test
+    # user.interactions.first.update({follow_up: Date.today.to_s})
+    @interactions = user.interactions.where({follow_up: Date.today.to_s})
+    if @interactions.length > 0
+      connections = @interactions.map {|interaction| interaction.connection.full_name}
+      connections = connections.join(", ")
+      @client.messages.create(
+        from: '+14085604374',
+        to:   "#{user.phone_number}",
+        body: "Remember to follow up with #{connections}"
+      )
+    end
+  end
   erb :'index'
 end
 

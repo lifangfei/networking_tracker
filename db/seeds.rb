@@ -2,12 +2,14 @@ require 'faker'
 
 harini_info = { first_name: "Harini", last_name: "Balakrishnan", email: "harini1593@gmail.com", password_hash: "xxx", username: "hariniGB"}
 harini = User.new(harini_info)
+harini.phone_number = "+14084555868"
 harini.password = harini.password_hash
 harini.save!
 
 4.times do
   person = { first_name: Faker::Name.first_name, last_name: Faker::Name.last_name }
   person[:email] = Faker::Internet.safe_email("#{person[:first_name]}.#{person[:last_name]}")
+  person[:phone_number] = Faker::PhoneNumber.cell_phone
   person[:password_hash] = "xxx"
   person[:username] = "#{person[:first_name]}#{person[:last_name]}".downcase
 
@@ -17,7 +19,7 @@ harini.save!
 end
 
 20.times do
-  list_details = { name: Faker::Job.field,
+  list_details = { name: ["Big Data", "Analytics", "Strategy", "Virtual Reality", "Gaming", "Ed Tech", "BioTech", "Cybersecurity", "Digital Marketing", "Front-end Developers", "Full-stack Leads", "Alumni from University", "Augmented Reality Companies", "Fintech", "Internet Companies", "Digital Media", "General Connections", "3D Printing Companies", "Social Media Companies"].sample,
                    tier: (1+rand(3)),
                    notes: Faker::Lorem.paragraph,
                    user_id: (1+rand(5))}
