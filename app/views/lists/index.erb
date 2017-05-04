@@ -1,31 +1,14 @@
-
-<div class="page-container">
-
-  <style>
-  form { display: inline; }
-  form input {
-    background:none!important;
-    border:none;
-    padding:0!important;
-    font: inherit;
-    color: -webkit-link;
-    text-decoration: underline;
-    cursor: auto;
-  }
-  </style>
-
-  <h1>All Lists</h1>
-  <div class="lists">
-    <ul>
-      <% @lists.each do |list| %>
-        <li><%= "#{list.name}"%> - <a href="/lists/<%= list.id %>">Show</a>
-        <a href="/lists/<%= list.id %>/edit">Edit</a>
-        <%= erb :"lists/_delete", layout: false, locals: {list: list} %> <br>
-        Tier: <%= list.tier %> <br>
-        Notes: <%= list.notes %>
-        </li><br>
-      <% end %>
-    </ul>
-  </div>
-
+<img class="coverPhoto" src="/cityscape2.png">
+<br>
+<br>
+<br>
+<h1><center>All Lists</center></h1>
+<ul class="lists">
+  <% @lists.each do |list| %>
+    <li> <a href="/lists/<%= list.id %>"><%= "#{list.name}"%></a>
+    </li><br>
+  <% end %>
+</ul>
+<div class="list-details">
+  <%= erb :"/lists/_index", locals: {list: @lists.first} %>
 </div>

@@ -22,4 +22,16 @@ $(document).ready(function() {
       $('#homepage-signup').append(response);
     })
   });
+
+  $('.lists').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $('.list-details').empty();
+      $('.list-details').append(response);
+    })
+  });
 });

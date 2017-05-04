@@ -1,10 +1,3 @@
-# get '/interactions' do
-get "/interactions" do
-  user = User.find(session[:user_id])
-  @interactions = user.interactions
-  erb :"interactions/index"
-end
-
 #new
 get '/interactions/new' do
   @interaction = Interaction.new
