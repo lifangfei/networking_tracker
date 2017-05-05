@@ -34,4 +34,16 @@ $(document).ready(function() {
       $('.list-details').append(response);
     })
   });
+
+  $('.list-details').find('li').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $(".interaction-details").remove();
+      link.after(response);
+    })
+  });
 });
