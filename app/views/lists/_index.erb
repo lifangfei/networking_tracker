@@ -5,6 +5,8 @@ Connections: <% list.connections.each do |connection|%>
   <li><a href="/connections/<%= connection.id %>"><%= connection.full_name %></a></li>
 <% end  %>
 <br>
+<div class="list-buttons">
 <center><a id="button" href="/lists/new">Add List</a></center>
 <center><a id="button" href="/lists/<%= list.id %>/edit">Edit</a></center>
 <%= erb :"lists/_delete", layout: false, locals: {list: list} %> <br>
+</div>
