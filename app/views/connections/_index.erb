@@ -16,4 +16,5 @@
   <% end  %>
 <br>
 <center><a id="button" href="/connections/<%= connection.id %>/edit">Edit</a></center>
+<center><a id="button" href="/interactions/<%= connection.id %>/edit">Edit</a></center>
 <%= erb :"connections/_delete", layout: false, locals: {connection: connection} %> <br>
