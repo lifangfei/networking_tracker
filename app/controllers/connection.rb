@@ -1,12 +1,7 @@
 #show all connection
 get '/connections' do
   user = User.find(session[:user_id])
-  lists = user.lists
-  @connections = []
-  lists.each do |list|
-    @connections << list.connections
-  end
-  @connections
+  @connections = user.connections
   erb :'connections/index'
 end
 
@@ -20,8 +15,7 @@ end
 post '/connections' do
   @connection = Connection.new(params[:connection])
   @connection.password = params[:password_hash]
-  @connection.save!
-  if @connection.valid?
+  if @connection.save
     redirect '/connections'
   else
     status 422
@@ -33,15 +27,14 @@ end
 #show
 get '/connections/:id' do
   user = User.find(session[:user_id])
-  lists = user.lists
-  @connections = []
-  lists.each do |list|
-    @connections << list.connections
-  end
-  @connections
+  @connections = user.connections
   @connection = Connection.find(params[:id])
-  redirect '/connections' unless @connections.flatten.include? @connection
-  erb :'connections/show'
+  redirect '/sessions/new' unless @connections.include? @connection
+  if request.xhr?
+    erb :'connections/_index', layout: false, locals: {connection: @connection}
+  else
+    erb :'connections/show'
+  end
 end
 
 #edit
