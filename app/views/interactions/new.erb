@@ -1,10 +1,9 @@
+<div class="coverPhoto"></div>
 
 <div class="page-container">
-
-  <h1> Record Interaction </h1>
-  <form action="/interactions" method="post">
+  <form action="/connections/<%=@connection.id%>/interactions" method="post">
     <h2> Add Interaction </h2>
-    <%= erb :'interactions/_form_fields', layout: false %>
+    <%= erb :'interactions/_form_fields', layout: false, locals: {current_interaction: @interaction} %>
     <div>
       <input name="commit" type="submit" value="Add Interaction"/>
     </div>
