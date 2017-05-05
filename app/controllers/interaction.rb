@@ -6,18 +6,17 @@ get '/connections/:id/interactions/new' do
 end
 
 #create
-post 'connections/:id/interactions' do
+post '/connections/:id/interactions' do
   @interaction = Interaction.new(params[:interaction])
   @connection = Connection.find(params[:id])
-  @interaction.user_id = session[:user_id]
   @interaction.connection_id = params[:id]
   @interaction.save!
   if @interaction.valid?
-    redirect '/interactions'
+    redirect '/connections'
   else
     status 422
     @errors = @interaction.errors.full_messages
-    erb :'interactions/new'
+    erb :"/connections/#{@connection.id}/interactions/new"
   end
 end
 

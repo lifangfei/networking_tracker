@@ -13,7 +13,6 @@ end
 
 post '/lists' do
   @list = List.new(params[:list])
-  @list.password = params[:password_hash]
   @list.user_id = session[:user_id]
   @list.save!
   if @list.valid?

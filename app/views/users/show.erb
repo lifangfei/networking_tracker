@@ -1,15 +1,5 @@
-<img class="coverPhoto" src="/cityscape2.png">
+<div class="coverPhoto"></div>
 <style>
-/*form { display: inline; }
-form input {
-  background:none!important;
-  border:none;
-  padding:0!important;
-  font: inherit;
-  color: -webkit-link;
-  text-decoration: underline;
-  cursor: auto;
-}*/
 </style>
 
 <div class="page-container">
@@ -18,6 +8,10 @@ form input {
     <img class="userIcon" src="/user_icon.png">
   </div>
   <h1><center><%= @user.full_name %></center></h1>
+  <center><h3><%= @user.lists.length %> Lists  |
+  <%= @user.connections.length %> Connections  |
+  <%= @user.interactions.length %> Interactions</h3></center>
+
   <div class="users-details">
     <ul>
       <li>First Name: <%= @user.first_name %></li>

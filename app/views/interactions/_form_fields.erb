@@ -1,15 +1,15 @@
 <div>
   <div>
     <label for="interaction_date">Date</label>
-    <input id="interaction_date" name="interaction[date]" type="text" value="<%=@interaction.date %>"/>
+    <input id="interaction_date" name="interaction[date]" type="date" value="<%=current_interaction.date %>"/>
   </div>
   <div>
     <label for="interaction_method">Method of Contact</label>
-    <input id="interaction_method" name="interaction[method_of_contact]" type="text" value="<%=@interaction.method_of_contact%>"/>
+    <input id="interaction_method" name="interaction[method_of_contact]" type="text" value="<%=current_interaction.method_of_contact%>"/>
   </div>
   <div>
     <label for="interaction_location">Location</label>
-    <input id="interaction_location" name="interaction[location]" type="text" value="<%=@interaction.location %>"/>
+    <input id="interaction_location" name="interaction[location]" type="text" value="<%=current_interaction.location %>"/>
   </div>
   <div>
     <label for="interaction_professional_discussion">Professional Discussion Topics</label>
@@ -25,6 +25,6 @@
   </div>
   <div>
     <label for="interaction_follow_up">Follow Up Date</label>
-    <input id="interaction_follow_up" name="interaction[follow_up]" type="text" value="<%=@interaction.follow_up %>"/>
+    <input id="interaction_follow_up" name="interaction[follow_up]" type="date" value="<%=current_interaction.follow_up %>"/>
   </div>
 </div>

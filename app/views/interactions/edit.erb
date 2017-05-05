@@ -1,3 +1,4 @@
+<div class="coverPhoto"></div>
 
 <div class="page-container">
 
@@ -5,7 +6,7 @@
   <h2> Edit Interaction </h2>
   <form action="/interactions/<%= @interaction.id %>" method="post">
     <input name="_method" type="hidden" value="patch" />
-    <%= erb :'interactions/_form_fields', layout: false %>
+    <%= erb :'interactions/_form_fields', layout: false, locals: {current_location: @location} %>
   <div>
       <input name="commit" type="submit" value="Edit User"/>
     </div>
