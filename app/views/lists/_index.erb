@@ -2,8 +2,8 @@
 Tier: <%= list.tier %> <br><br>
 Notes: <%= list.notes %> <br><br>
 Connections: <% list.connections.each do |connection|%>
-        <li><a href="/connections/<%= connection.id %>"><%= connection.full_name %></a></li>
-        <% end  %>
-      </li>
+  <li><a href="/connections/<%= connection.id %>"><%= connection.full_name %></a></li>
+<% end  %>
+<br>
 <center><a id="button" href="/lists/<%= list.id %>/edit">Edit</a></center>
 <%= erb :"lists/_delete", layout: false, locals: {list: list} %> <br>
