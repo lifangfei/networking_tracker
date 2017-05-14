@@ -1,0 +1,16 @@
+<div class="coverPhoto"></div>
+<br>
+<br>
+<br>
+<h1><center>All Connections</center></h1>
+<ul class="lists">
+  <% @connections.each do |connection| %>
+    <li> <a href="/connections/<%= connection.id %>"><%= "#{connection.full_name}"%></a>
+    </li><br>
+  <% end %>
+</ul>
+<div class="list-details">
+  <%= erb :"/connections/_index", locals: {connection: @connections.first} %>
+</div>
+
+

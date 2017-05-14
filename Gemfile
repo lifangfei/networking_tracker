@@ -14,6 +14,10 @@ gem 'rake'
 
 gem 'shotgun', '~>0.9.1'
 
+gem 'bcrypt'
+gem 'twilio-ruby', '~> 4.11.1'
+gem 'dotenv'
+
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
@@ -23,5 +27,5 @@ end
 
 group :test, :development do
   gem 'factory_girl'
-  gem 'faker'
+  gem 'faker', '~>1.7.3'
 end

@@ -1,0 +1,21 @@
+<h3><%= connection.full_name %></h3> <br>
+  List: <%= connection.list.name %><br>
+  Company: <%= connection.company %><br>
+  Title: <%= connection.title %><br>
+  Phone: <%= connection.phone %><br>
+  Mobile: <%= connection.mobile %><br>
+  Fax: <%= connection.fax %><br>
+  Email: <%= connection.email %><br>
+  Website: <%= connection.website %><br>
+  Industry: <%= connection.industry %><br>
+  Linkedin: <%= connection.linkedin %><br>
+  Notes: <%= connection.notes %><br>
+  Tier: <%= connection.tier %><br>
+  Interactions: <% connection.interactions.each do |interaction|%>
+    <li><a href="/interactions/<%= interaction.id %>"><%= interaction.date %></a></li>
+  <% end  %>
+<br>
+<center><a id="button" href="/connections/new">Add Connection</a></center>
+<center><a id="button" href="/connections/<%= connection.id %>/interactions/new">Add Interaction</a></center>
+<center><a id="button" href="/interactions/<%= connection.id %>/edit">Edit</a></center>
+<%= erb :"connections/_delete", layout: false, locals: {connection: connection} %> <br>

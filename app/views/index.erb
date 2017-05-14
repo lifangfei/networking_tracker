@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <title>Networking Tracker</title>
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Volkhov">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- js -->
+  <script src="js/modernizr.js"></script>
+</head>
+
+<body>
+
+  <main>
+
+      <section class="module parallax parallax-1">
+        <div class="container">
+          <h1>Network</h1>
+        </div>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+        <% if !logged_in? %>
+          <div id="homepage-signup">
+            <%= erb :"/users/_front_page_signup" %>
+          </div>
+          <div id="homepage-login">
+          </div>
+        <% else %>
+          <h2>Getting Started</h2>
+            <p>1. Think about your networking goals and create groups of people you need to reach out to. Separate them out by industry, business function, relationships, etc. Whatever you think best suits your needs.</p>
+            <p>2. Record people that you reach out to in each list to the best of your ability. These people will make up your 'connections' list</p>
+            <p>3. Every time you have a conversation over email, phone, coffee, etc. jot down that information as an 'interaction'</p>
+            <p>4. Don't let your networks die. Set dates for follow-up interactions to reach out to your existing network</p>
+        <% end  %>
+        </div>
+      </section>
+
+      <section class="module parallax parallax-2">
+        <div class="container">
+          <h1>With</h1>
+        </div>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <h2>Words of Wisdom</h2>
+          <p>"Networking is an essential part of building wealth" - Armstrong Williams</p>
+          <p>Networking is all about connecting with people. But then again, isn't that what life is about? The more time you can find to get out of the office and build true friendships, the farther your startup will go" - Jay Samit</p>
+          <p>"To be successful, you have to be able to relate to people; they have to be satisfied with your personality to be able to do business with you and to build a relationship with mutual trust" - George Ross</p>
+          <p>"Pulling a good network together takes effort, sincerity and time" - Alan Collins</p>
+          <p>"You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you" - Dale Carnegie</p>
+          <p>"The currency of real networking is not greed but generosity" - Keith Ferrazzi</p>
+        </div>
+      </section>
+
+      <section class="module parallax parallax-3">
+        <div class="container">
+          <h1>Efficiency</h1>
+        </div>
+      </section>
+
+      <section class="module content">
+        <div class="container">
+          <h2>How to Network</h2>
+          <p>Networking is about long-term connections with people based on genuine interest in the other person. Make sure to be informed about the target of your outreach through research. Make sure to keep building the relationship as time progresses.</p>
+          <p>Compile a list of people who can help you with your job search, business expansion, etc. and anyone who can potentially introduce you to one of these people. Start with alumni, family, and friends and expand your connections from there.</p>
+          <p>Have interactions by sending your connection an email and ask to talk over the phone or over a cup of coffee. Ask genuine and informed questions to really stand apart from the crowd. Don't try to ask for a job directly, just try to have a great conversation. </p>
+          <p>Follow up with your contact by asking if they know people who they could introduce you to or whom you should reach out to. Be sure to send a thank you email or note with some things you appreciated or learned from the interview.</p>
+        </div>
+      </section>
+
+  </main>
+
+</div>
+
+</body>
+</html>

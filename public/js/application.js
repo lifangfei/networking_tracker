@@ -1,7 +1,49 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  $('#homepage-signup').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $('#homepage-signup').empty();
+      $('#homepage-login').append(response);
+    })
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#homepage-login').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $('#homepage-login').empty();
+      $('#homepage-signup').append(response);
+    })
+  });
+
+  $('.lists').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $('.list-details').empty();
+      $('.list-details').append(response);
+    })
+  });
+
+  $('.list-details').find('li').on('click', "a", function(e){
+    e.preventDefault();
+    var link = $(this);
+    $.ajax({
+      url:    link.attr("href")
+    })
+    .done(function(response){
+      $(".interaction-details").remove();
+      link.after(response);
+    })
+  });
 });

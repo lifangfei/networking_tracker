@@ -1,0 +1,12 @@
+<div class="coverPhoto"></div>
+
+<div class="page-container">
+  <form action="/connections" method="post">
+  <h2> Add Connection </h2>
+    <%= erb :'connections/_form_fields', layout: false %>
+    <div>
+      <input name="commit" type="submit" value="Add Connection"/>
+    </div>
+  </form>
+
+</div>

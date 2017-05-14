@@ -1,0 +1,19 @@
+<div class="coverPhoto"></div>
+
+<div class="page-container">
+
+  <h1>List</h1>
+  <div class="lists-details">
+    <ul>
+      <li>Name: <%= @list.name %></li>
+      <li>Tier: <%= @list.tier %></li>
+      <li>Notes: <%= @list.notes %></li><br>
+      <li>Connections: <% @list.connections.each do |connection|%>
+        <li><a href="/connections/<%= connection.id %>"><%= connection.full_name %></a></li>
+        <% end  %>
+      </li>
+    </ul>
+  </div>
+
+</div>
+

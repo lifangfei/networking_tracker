@@ -1,0 +1,14 @@
+<div class="coverPhoto"></div>
+<br>
+<br>
+<br>
+<h1><center>All Lists</center></h1>
+<ul class="lists">
+  <% @lists.each do |list| %>
+    <li> <a href="/lists/<%= list.id %>"><%= "#{list.name}"%></a>
+    </li><br>
+  <% end %>
+</ul>
+<div class="list-details">
+  <%= erb :"/lists/_index", locals: {list: @lists.first} %>
+</div>
